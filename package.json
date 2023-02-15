@@ -1,0 +1,32 @@
+{
+  "name": "bookself-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp clean && gulp pages && gulp styles && gulp script",
+    "gulp-clean": "gulp clean",
+    "gulp-page": "gulp pages",
+    "gulp-style": "gulp styles",
+    "gulp-script": "gulp script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-yappeter/dicoding-bookself-apps.git"
+  },
+  "dependencies": {
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify": "^3.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-yappeter/dicoding-bookself-apps/issues"
+  },
+  "homepage": "https://github.com/david-yappeter/dicoding-bookself-apps#readme"
+}
