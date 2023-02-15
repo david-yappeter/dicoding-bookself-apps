@@ -17,21 +17,63 @@
 
       <!-- start::Body -->
       <main class="flex m-2 grow">
-        <!-- start:left section -->
+        <!-- start::left section -->
         <section class="grow">
           <div class="box-container h-100">
             <form class="flex flex-col items-center">
-              <h2>Masukkan Buku Baru</h2>
+              <h2 class="my-2">Masukkan Buku Baru</h2>
+
+              <!-- start::input Judul -->
+              <div class="form-control self-stretch">
+                <label class="form-label" for="_judul-input">
+                  <h3>Judul</h3>
+                </label>
+                <input id="_judul-input" class="form-input" />
+              </div>
+              <!-- end::input Judul -->
+
+              <!-- start::input Penulis -->
+              <div class="form-control self-stretch">
+                <label class="form-label" for="_penulis-input">
+                  <h3>Penulis</h3>
+                </label>
+                <input id="_penulis-input" class="form-input" />
+              </div>
+              <!-- end::input Penulis -->
+
+              <!-- start::input Tahun -->
+              <div class="form-control self-stretch">
+                <label class="form-label" for="_tahun-input">
+                  <h3>Tahun</h3>
+                </label>
+                <input
+                  id="_tahun-input"
+                  class="form-input"
+                  type="number"
+                  min="1900"
+                  max="2200"
+                  step="1" />
+              </div>
+              <!-- end::input Tahun -->
+
+              <!-- start::selesai dibaca checkbox -->
+              <div class="checkbox-slider">
+                <label>
+                  <input type="checkbox" id="_checkbox-slider" />
+                  <div></div>
+                </label>
+              </div>
+              <!-- end::selesai dibaca checkbox -->
             </form>
           </div>
         </section>
-        <!-- end:left section -->
+        <!-- end::left section -->
 
         <!-- start::separator -->
         <div class="mx-2"></div>
         <!-- end::separator -->
 
-        <!-- start:right section -->
+        <!-- start::right section -->
         <section class="grow">
           <div class="flex flex-col h-100">
             <!-- start::search row -->
@@ -63,7 +105,7 @@
             <!-- end::completed -->
           </div>
         </section>
-        <!-- end:right section -->
+        <!-- end::right section -->
       </main>
       <!-- end::Body -->
     </div>

@@ -17,6 +17,13 @@
   --space-3: 1.5rem;
   --space-4: 2rem;
   --space-5: 2.5rem;
+
+  /* typography */
+  --font-1: 0.3rem;
+  --font-2: 0.6rem;
+  --font-3: 0.9rem;
+  --font-4: 1.2rem;
+  --font-5: 1.6rem;
 }
 
 * {
@@ -43,9 +50,14 @@ h6,
 
 p,
 span,
+input,
 .body1 {
   color: var(--primary);
   font-family: Poppins, 'Courier New', Courier, monospace;
+}
+
+input {
+  color: var(--dark);
 }
 
 /* color */
@@ -76,6 +88,10 @@ span,
 
 .items-center {
   align-items: center;
+}
+
+.self-stretch {
+  align-self: stretch;
 }
 
 .grow {
@@ -116,4 +132,39 @@ span,
 
 .h-100 {
   height: 100%;
+}
+
+/* form */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--space-2);
+  margin-right: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.form-control .form-label {
+  margin-bottom: var(--space-1);
+}
+
+.form-control .form-input {
+  border-radius: 4px;
+  padding: 8px;
+  font-size: var(--font-3);
+}
+
+/* slider checkbox */
+.checkbox-slider > label > input {
+  display: none;
+}
+
+.checkbox-slider > label > input + div {
+  width: 30px;
+  height: 20px;
+  background-color: red;
+  transform: all 0.3s;
+}
+
+.checkbox-slider > label > input:checked + div {
+  background-color: green;
 }
