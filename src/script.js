@@ -10,7 +10,6 @@ const FORM_SESSION_KEY = 'form-input-session';
 
 // constant event key
 const ON_BOOK_SAVED = 'onBookSaved';
-const ON_BOOK_MOVE = 'onBookMove';
 const ON_BOOK_SEARCH = 'onBookSearch';
 const ON_BOOK_DELETE = 'onBookDelete';
 const ON_BOOK_LOAD = 'onBookLoad';
@@ -196,12 +195,6 @@ document.addEventListener(ON_BOOK_SAVED, function (e) {
   createDOMBook(book);
 });
 
-document.addEventListener(ON_BOOK_MOVE, function (e) {
-  const book = e.detail;
-  deleteDOMBookById(book.id);
-  createDOMBook(book);
-});
-
 document.addEventListener(ON_BOOK_DELETE, function (e) {
   const id = e.detail;
   deleteDOMBookById(id);
@@ -266,11 +259,8 @@ function addBook(book) {
 function moveBook(id) {
   const book = getBookById(id);
   book.isComplete = !book.isComplete;
-  document.dispatchEvent(
-    new CustomEvent(ON_BOOK_MOVE, {
-      detail: book,
-    })
-  );
+  deleteBook(book.id);
+  addBook(book);
 }
 
 function deleteBook(id) {
