@@ -1,0 +1,15 @@
+version: "3.0"
+
+services:
+  dev-nginx:
+    container_name: nginx_bookself_apps_dev
+    image: nginx:1.23.3-alpine
+    volumes:
+      - ./src/:/usr/share/nginx/html
+    ports:
+      - 6060:80
+
+  prod-nginx:
+    container_name: nginx_bookself_apps_prod
+    build:
+      context: .
