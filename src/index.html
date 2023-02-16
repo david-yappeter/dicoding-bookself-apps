@@ -16,11 +16,11 @@
       <!-- end::Header -->
 
       <!-- start::Body -->
-      <main class="flex m-2 grow">
+      <main class="flex flex-col lg:flex-row m-2 grow">
         <!-- start::left section -->
         <section class="grow">
           <div class="box-container h-100">
-            <form class="flex flex-col items-center">
+            <form class="form flex flex-col items-center">
               <h2 class="my-2">Masukkan Buku Baru</h2>
 
               <!-- start::input Judul -->
@@ -57,13 +57,26 @@
               <!-- end::input Tahun -->
 
               <!-- start::selesai dibaca checkbox -->
-              <div class="checkbox-slider">
-                <label>
-                  <input type="checkbox" id="_checkbox-slider" />
-                  <div></div>
+              <div class="form-control self-stretch">
+                <label class="form-label">
+                  <h3>Sudah Dibaca</h3>
                 </label>
+                <div class="checkbox-slider">
+                  <label>
+                    <input type="checkbox" id="_checkbox-slider" />
+                    <div></div>
+                  </label>
+                </div>
               </div>
               <!-- end::selesai dibaca checkbox -->
+
+              <!-- start::submit button -->
+              <button
+                type="button"
+                class="btn btn-primary font-xl inverse self-stretch">
+                Masukkan Buku ke rak <strong>Belum selesai dibaca</strong>
+              </button>
+              <!-- end::submit button -->
             </form>
           </div>
         </section>
@@ -78,8 +91,19 @@
           <div class="flex flex-col h-100">
             <!-- start::search row -->
             <div>
-              <div class="box-container">
-                <p>Search Column</p>
+              <div class="box-container px-2 py-2">
+                <div class="form-control">
+                  <label class="form-label" for="_search-input">
+                    <h3 class="mb-1">Cari Buku</h3>
+                  </label>
+                  <div class="flex flex-col lg:flex-row">
+                    <input id="_search-input" class="grow form-input" />
+                    <button
+                      class="btn btn-primary inverse self-center px-2 mt-2 lg:ml-2 lg:mt-0">
+                      Cari
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- end::search row -->
@@ -89,20 +113,60 @@
             <!-- end::separator -->
 
             <!-- start::not completed -->
-            <div class="box-container grow">
-              <p>not completed</p>
-            </div>
+            <section
+              class="box-container grow flex flex-col basis-50 scrollable px-2 py-2">
+              <h3 class="mb-1">Belum selesai dibaca</h3>
+
+              <div class="grow">
+                <!-- start::item -->
+                <div class="book-item">
+                  <div class="book-info">
+                    <h5>Title (2006)</h5>
+                    <p>penulis: ABC</p>
+                  </div>
+                  <div class="book-action">
+                    <button class="btn btn-success inverse px-2">
+                      Selesai dibaca
+                    </button>
+                    <button class="btn btn-danger inverse px-2">
+                      Hapus buku
+                    </button>
+                  </div>
+                </div>
+                <!-- end::item -->
+              </div>
+            </section>
             <!-- end::not completed -->
 
             <!-- start::separator -->
             <div class="my-1"></div>
             <!-- end::separator -->
 
-            <!-- start::completed -->
-            <div class="box-container grow">
-              <p>completed</p>
-            </div>
-            <!-- end::completed -->
+            <!-- start::not completed -->
+            <section
+              class="box-container grow flex flex-col basis-50 scrollable px-2 py-2">
+              <h3 class="mb-1">Selesai Dibaca</h3>
+
+              <div class="grow">
+                <!-- start::item -->
+                <div class="book-item">
+                  <div class="book-info">
+                    <h5>Title (2006)</h5>
+                    <p>penulis: ABC</p>
+                  </div>
+                  <div class="book-action">
+                    <button class="btn btn-success inverse px-2">
+                      Belum Selesai dibaca
+                    </button>
+                    <button class="btn btn-danger inverse px-2">
+                      Hapus buku
+                    </button>
+                  </div>
+                </div>
+                <!-- end::item -->
+              </div>
+            </section>
+            <!-- end::not completed -->
           </div>
         </section>
         <!-- end::right section -->
