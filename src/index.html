@@ -75,7 +75,7 @@
                   <label>
                     <input
                       type="checkbox"
-                      id="_checkbox-slider"
+                      id="_iscomplete-input"
                       name="is_complete" />
                     <div></div>
                   </label>
@@ -109,13 +109,10 @@
                   <label class="form-label" for="_search-input">
                     <h3 class="mb-1">Cari Buku</h3>
                   </label>
-                  <div class="flex flex-col lg:flex-row">
-                    <input id="_search-input" class="grow form-input" />
-                    <button
-                      class="btn btn-primary inverse self-center px-2 mt-2 lg:ml-2 lg:mt-0">
-                      Cari
-                    </button>
-                  </div>
+                  <input
+                    placeholder="Nama buku"
+                    id="_search-input"
+                    class="grow form-input" />
                 </div>
               </div>
             </div>
@@ -153,7 +150,7 @@
       <!-- end::Body -->
     </div>
 
-    <div class="presentation"></div>
+    <div id="presentation"></div>
 
     <script src="./script.js"></script>
   </body>
