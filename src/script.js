@@ -1,2 +1,1 @@
-console.log('Hello');
-console.log('World');
+document.addEventListener('DOMContentLoaded', function () {});
