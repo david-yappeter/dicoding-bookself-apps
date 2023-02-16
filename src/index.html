@@ -20,7 +20,7 @@
         <!-- start::left section -->
         <section class="grow">
           <div class="box-container h-100">
-            <form class="form flex flex-col items-center">
+            <form id="_book-form" class="form flex flex-col items-center">
               <h2 class="my-2">Masukkan Buku Baru</h2>
 
               <!-- start::input Judul -->
@@ -28,7 +28,11 @@
                 <label class="form-label" for="_judul-input">
                   <h3>Judul</h3>
                 </label>
-                <input id="_judul-input" class="form-input" />
+                <input
+                  required
+                  id="_judul-input"
+                  class="form-input"
+                  name="title" />
               </div>
               <!-- end::input Judul -->
 
@@ -37,7 +41,11 @@
                 <label class="form-label" for="_penulis-input">
                   <h3>Penulis</h3>
                 </label>
-                <input id="_penulis-input" class="form-input" />
+                <input
+                  required
+                  id="_penulis-input"
+                  class="form-input"
+                  name="author" />
               </div>
               <!-- end::input Penulis -->
 
@@ -47,8 +55,10 @@
                   <h3>Tahun</h3>
                 </label>
                 <input
+                  required
                   id="_tahun-input"
                   class="form-input"
+                  name="year"
                   type="number"
                   min="1900"
                   max="2200"
@@ -63,7 +73,10 @@
                 </label>
                 <div class="checkbox-slider">
                   <label>
-                    <input type="checkbox" id="_checkbox-slider" />
+                    <input
+                      type="checkbox"
+                      id="_checkbox-slider"
+                      name="is_complete" />
                     <div></div>
                   </label>
                 </div>
@@ -72,7 +85,7 @@
 
               <!-- start::submit button -->
               <button
-                type="button"
+                type="submit"
                 class="btn btn-primary font-xl inverse self-stretch">
                 Masukkan Buku ke rak <strong>Belum selesai dibaca</strong>
               </button>
@@ -117,24 +130,7 @@
               class="box-container grow flex flex-col basis-50 scrollable px-2 py-2">
               <h3 class="mb-1">Belum selesai dibaca</h3>
 
-              <div class="grow">
-                <!-- start::item -->
-                <div class="book-item">
-                  <div class="book-info">
-                    <h5>Title (2006)</h5>
-                    <p>penulis: ABC</p>
-                  </div>
-                  <div class="book-action">
-                    <button class="btn btn-success inverse px-2">
-                      Selesai dibaca
-                    </button>
-                    <button class="btn btn-danger inverse px-2">
-                      Hapus buku
-                    </button>
-                  </div>
-                </div>
-                <!-- end::item -->
-              </div>
+              <div id="_not-completed-container" class="grow"></div>
             </section>
             <!-- end::not completed -->
 
@@ -147,24 +143,7 @@
               class="box-container grow flex flex-col basis-50 scrollable px-2 py-2">
               <h3 class="mb-1">Selesai Dibaca</h3>
 
-              <div class="grow">
-                <!-- start::item -->
-                <div class="book-item">
-                  <div class="book-info">
-                    <h5>Title (2006)</h5>
-                    <p>penulis: ABC</p>
-                  </div>
-                  <div class="book-action">
-                    <button class="btn btn-success inverse px-2">
-                      Belum Selesai dibaca
-                    </button>
-                    <button class="btn btn-danger inverse px-2">
-                      Hapus buku
-                    </button>
-                  </div>
-                </div>
-                <!-- end::item -->
-              </div>
+              <div id="_completed-container" class="grow"></div>
             </section>
             <!-- end::not completed -->
           </div>
@@ -175,5 +154,7 @@
     </div>
 
     <div class="presentation"></div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
